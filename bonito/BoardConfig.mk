@@ -17,5 +17,9 @@
 TARGET_BOOTLOADER_BOARD_NAME := bonito
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 165
 
+# DTBO partition definitions
+BOARD_PREBUILT_DTBOIMAGE := device/google/bonito-kernel/dtbo.img
+BOARD_DTBOIMG_PARTITION_SIZE := 8388608
+
 include device/google/bonito/BoardConfig-common.mk
 -include vendor/google_devices/bonito/proprietary/BoardConfigVendor.mk

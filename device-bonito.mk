@@ -47,3 +47,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Add white point compensated coefficient
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.adaptive_white_coefficient=0.0051,-0.3462,18.964,0.0047,-0.1155,-10.312,0.005,-0.2931,12.301
+
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+    LOCAL_KERNEL := device/google/bonito-kernel/Image.lz4-dtb
+else
+    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
